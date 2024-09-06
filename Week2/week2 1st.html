@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20240902</title>
+
+    <style>
+        #div_room{
+            font-size: 5rem;
+            border: #000000 solid 5px;
+            background-color:aqua;
+            
+            margin: 50px; /* 하나의 값만 주면 4개방향 다 적용해줍니다. */
+            margin-top : 10px; /* 순서대로 선언되니 주의할 것*/
+            margin-right : 15px; 
+            margin-bottom : 60px;
+            margin-left : 30px;
+        }
+        #div_room1{
+            font-size: 5rem;
+            background-color:bisque;
+            /*top right bottom left 순서 중요 , top부터 시계방향*/
+            margin : 50px 40px 30px 20px; /*사이에 쉼표 x*/
+            border-radius:15px;
+            border:35px;
+            border-color:aquamarine;
+            border-style: dotted;
+        }
+        
+        #div_room2{
+            font-size: 5rem;
+            border: #000000 solid 5px; /*색깔 형태 크기*/
+            background-color:rgb(196, 255, 231);
+            margin : 0px;
+            /*top right bottom left 순서 중요 , top부터 시계방향*/
+            padding : 50px 40px 30px 20px; /*사이에 쉼표 x*/
+            
+        }
+        #div_font_style{
+            font-size: 50px;
+            font-size: 1.1em;
+            font-size: 1.2rem;
+            width: calc(50vw - 200px); /*vw는 전체 가로 길이를 100으로 봤을 때 
+            절반이 아닌 이유 1. body의 기본 마진, 2. 선의 크기*/
+            height: 20vh; /*화면 크기의 상대적인 값*/
+            border: #000000 solid 5px;
+        }
+        #div_font_style1{
+            width: 150px;
+            height: 70px;
+            font-weight: 400;
+        }
+        #div_font_style2{
+            font-weight: 600; /*600은 bold체다*/
+        }
+        #div_font_style3{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        안녕 위에 있는 공간
+    </div>
+    <div id="div_room">
+        안녕
+    </div>
+    <div id="div_room1">
+        안녕
+    </div>
+    <div id="div_room2">
+        padding
+    </div>
+    <div>
+        안녕 아래에 있는 공간
+    </div>
+    <div id="div_font_style">
+        글자 스타일
+    </div>
+    <div id="div_font_style1">
+        글자 스타일입니다 400
+    </div>
+    <div id="div_font_style2">
+        글자 스타일입니다 600
+    </div>
+    <div id="div_font_style3">
+        글자 스타일입니다 900
+    </div>
+    <b>
+        이게 볼드체!!!
+    </b>
+
+    <div id="div_position_fixed" style="position: fixed; top:50px; left:100px; background-color:yellow">
+        fixed position
+    </div>
+    <div style = "position:fixed;top:300px">
+        <div id="div_position_absolute1" style="position:absolute; top:10px; background-color:green; z-index:40;">
+            absolute position1
+        </div>
+        <div id="div_position_absolute2" style="position:absolute; top:20px; background-color:green; z-index:30;">
+            absolute position2
+        </div>
+    </div>
+
+    <table style="width:100%; text-align: center;border: 5px soild #3d3d3d;">
+        <thead>
+            <tr>
+                <th style="border-bottom: 1px dotted #3d3d3d">#</th>
+                <td>제목</td>
+                <td>숫자1</td>
+                <td>숫자2</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+            <tr2>
+                <td>1</td>
+                <td>내용4</td>
+                <td>내용5</td>
+                <td>내용6</td>
+            </tr2>
+            <tr3>
+                <td>1</td>
+                <td>내용7</td>
+                <td>내용8</td>
+                <td>내용9</td>
+            </tr3>
+        </tbody>
+        
+        
+    </table>
+    <div>
+        <a>111</a>
+        <a style="float: right">222</a>
+        <a>121</a>
+        <a>131</a>
+    </div>
+</body>
+</html>
+
+<!-- margin padding font속성 border
+ float table display
+ 코드 보고 빠진 부분들 연습해보자!-->

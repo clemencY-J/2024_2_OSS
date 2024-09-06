@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .input_basic{
+        background-color:aqua;
+    }
+
+    @media (max-width:800px) {
+        .input_basic {
+            background-color: brown;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div>
+        안녕하세요!
+    </div>
+    <!-- input은 그 줄에서 태그를 닫으므로 in-line tag이다.-->
+    text input
+    <input type="text" id="input_1" class="input_basic"/> <!-- type은 attribute이다. 따라서 동적으로 접근할 수 있다-->
+    number input
+    <input type="number" id="input_2" class="input_basic"/> <!-- e도 들어갈 수 있다 ㅎ-->
+    date input
+    <input type="date" id="input_3" class="input_basic"/>
+    time input
+    <input type="time" id="input_4" class="input_basic"/>
+    <br />
+    <br />
+    <!-- label을 설정하면 글자를 눌러도 체크박스가 체크됨-->
+    <label for="input_5">checkbox input</label>
+    <input type="checkbox" id="input_5" class="input_basic"/>
+    <br />
+    <br />
+    <!-- 여러가지 중에 하나만 고를 때-->
+    <label>radio input</label>
+    1<input type="radio" id="input_6_1" name="input_6" value="0001" class="input_basic"/>
+    2<input type="radio" id="input_6_2" name="input_6" value="0002" class="input_basic"/>
+    3<input type="radio" id="input_6_3" name="input_6" value="0003" class="input_basic"/>
+    4<input type="radio" id="input_6_4" name="input_6" value="0004" class="input_basic"/>
+
+    <br />
+    <br />
+    <select id="select_1">
+        <option value="first">가</option>
+        <option value="나">나</option>
+        <option value="다">다</option>
+        <option value="none">라</option>
+    </select>
+
+</body>
+</html>
