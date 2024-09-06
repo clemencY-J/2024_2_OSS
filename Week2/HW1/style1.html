@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw1_style1.html_22100675</title>
+    <style>
+        #title{
+            border: white 0.1px;
+            border-radius: 4px;
+            background-color: green;
+            font-size: 1rem;
+            color: white;
+            padding: 10px;
+            margin: 20px 20px 10px 20px;
+        }
+        #menu{
+            width: 230px;
+            height: 300px;
+            float: left
+        }
+        .style_select{
+            background-color: rgba(232, 215, 215, 0.47);
+            padding: 5px;
+            margin: 2px;
+            list-style-type: none;
+            border: 1px rgb(133, 128, 128)
+        }
+        #menu_select{
+            margin:8px;
+            padding:10px;
+            
+            border-radius: 10px;
+           
+        }
+        #middle{
+            margin: 0 250px 100px 10px;
+            
+        }
+        #side{
+            background-color:rgb(54, 129, 190);
+            border-radius:5px;
+            color: white;
+            width: 200px;
+            right: 0;
+            top: 6rem; /*제목보다 밑에 오도록*/
+            bottom: 500px;
+            margin: 30px;
+            padding: 10px;
+            position: absolute;
+        }
+        #title h1, #title_text{
+            margin: 0;
+            padding: 0;
+        }
+
+        #bottom{
+            border: rgb(186, 183, 183) 1px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            background-color:antiquewhite;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h1 id="title_h1">Welcome to 정영준's Homepage (22100675)</h1>
+        <p id="title_text">Use the menu to select different Stylesheets</p>
+    </div>
+    <div id="menu">
+        <ul id="menu_select">
+            <li class="style_select" onclick="styleOn(1)">Stylesheet 1</li>
+            <li class="style_select" >Stylesheet 2</li>
+            <li class="style_select" >Stylesheet 3</li>
+            <li class="style_select" >Stylesheet 4</li>
+            <li class="style_select" onclick="styleOff()">No Stylesheet</li>
+        </ul>
+    </div>
+    
+    <div id="middle">
+        <h1>Same Page Different Stylesheets</h1>
+        <p>
+            This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
+            <a href="#" onclick="styleOn(1)">Stylesheet1</a>, 
+            <a href="#">Stylesheet2</a>,
+            <a href="#">Stylesheet3</a>,
+            <a href="#">Stylesheet4</a>.
+        </p>
+        <h2>No Styles</h2>
+        This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
+        <a href="#" onclick="styleOff()">No Stylesheet.</a>
+    </div>
+    
+
+    <div id="side">
+        <h3>Side-Bar</h3>
+        <div>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+    </div>
+    <br/>
+    <div id="bottom">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    </div>
+
+<script>
+    function styleOn(i){
+        styleOff()
+        document.styleSheets[0].disabled = false;
+    }
+    function styleOff() {
+        document.styleSheets[0].disabled = true;
+    }
+</script>
+</body>
+</html>
