@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ul.breadcrumb1 {
+            padding: 10px 16px;
+            margin: 50px;
+            margin-left: 100px;
+            list-style: none;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        ul.breadcrumb1 li {
+            display: inline;
+            font-size: 18px;
+        }
+
+        ul.breadcrumb1 li+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+
+        ul.breadcrumb1 li a {
+            color: #0275d8;
+        }
+
+        ul.breadcrumb1 li a:hover {
+            color: #01447e;
+            text-decoration: underline;
+        }
+
+        #blank {
+            background-color: gray;
+            width: 100vw;
+            height: 50px;
+            margin-left: 0;
+        }
+    </style>
+
+    <style>
+        /*breadcrumb2*/
+        ul.breadcrumb2 {
+            padding: 10px 16px;
+            margin: 50px;
+            margin-left: 100px;
+            list-style: none;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        ul.breadcrumb2 li {
+            display: inline;
+            font-size: 18px;
+        }
+
+        ul.breadcrumb2 li+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+
+        ul.breadcrumb2 li a {
+            color: black;
+            font-style: bold;
+            text-decoration: none;
+        }
+
+        ul.breadcrumb2 li a:hover {
+            color: gray;
+        }
+
+        #blank {
+            background-color: gray;
+            width: 100vw;
+            height: 50px;
+            margin-left: 0;
+        }
+
+        .data {
+            color: gray;
+        }
+    </style>
+
+    <style>
+        /*breadcrumb3*/
+        ul.breadcrumb3 {
+            padding: 10px 16px;
+            margin: 50px;
+            margin-left: 100px;
+            list-style: none;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        ul.breadcrumb3 li {
+            display: inline;
+            font-size: 18px;
+        }
+
+        ul.breadcrumb3 li+li:before {
+            padding: 8px;
+            color: black;
+            content: ">\00a0";
+        }
+
+        ul.breadcrumb3 li a {
+            color: black;
+            text-decoration: none;
+            display:block;
+        }
+
+        ul.breadcrumb3 li a:hover {
+            color: gray;
+        }
+
+        #blank {
+            background-color: rgba(128, 128, 128, 0.317);
+            width: 100vw;
+            height: 50px;
+            margin-left: 0;
+        }
+
+        .data {
+            color: gray;
+        }
+    </style>
+
+<style>
+    /*breadcrumb4*/
+    ul.breadcrumb4 {
+        padding: 10px 16px;
+        margin: 50px;
+        margin-left: 100px;
+        list-style: none;
+        background-color: #eee;
+        border-radius: 10px;
+    }
+
+    ul.breadcrumb4 li {
+        display: inline;
+        font-size: 18px;
+    }
+
+    ul.breadcrumb4 li+li:before {
+        padding: 8px;
+        color: black;
+        content: ">\00a0";
+    }
+
+    ul.breadcrumb4 li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    ul.breadcrumb4 li a:hover {
+        color: gray;
+    }
+
+    #blank {
+        background-color: rgba(128, 128, 128, 0.317);
+        width: 100vw;
+        height: 50px;
+        margin-left: 0;
+    }
+
+    .data {
+        color: gray;
+    }
+</style>
+</head>
+
+<body>
+
+    <ul class="breadcrumb1">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li>Data</li>
+    </ul>
+
+    <div id="blank">
+    </div>
+
+    <ul class="breadcrumb2">
+        <li><a href="#">🏠</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="data">Data</li>
+    </ul>
+    <div id="blank"></div>
+
+    <ul class="breadcrumb3">
+        <li><a href="#">🏠</a></li>
+        <li class="library"><a href="#">Library</a></li>
+        <li class="data">Data</li>
+    </ul>
+    <div id="blank"></div>
+    <ul class="breadcrumb4"></ul>
+        <li><a href="#">🏠Home</a></li>
+        <li class="library"><a href="#">Library</a></li>
+        <li class="data">Data</li>
+    </ul>
+    <div id="blank"></div>
+
+</body>
+
+</html>
