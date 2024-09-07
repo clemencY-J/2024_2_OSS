@@ -109,11 +109,57 @@
 
         ul.breadcrumb3 li a {
             color: black;
+            font-style: bold;
             text-decoration: none;
-            display:block;
         }
 
         ul.breadcrumb3 li a:hover {
+            color: gray;
+        }
+
+        #blank {
+            background-color: gray;
+            width: 100vw;
+            height: 50px;
+            margin-left: 0;
+        }
+
+        .data {
+            color: gray;
+        }
+    </style>
+
+
+    <style>
+        /*breadcrumb4*/
+        ul.breadcrumb4 {
+            padding: 10px 16px;
+            margin: 50px;
+            margin-left: 100px;
+            list-style: none;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        ul.breadcrumb4 li {
+            display: inline;
+            font-size: 18px;
+        }
+
+        ul.breadcrumb4 li+li:before {
+            padding: 8px;
+            color: gray;
+            content: ">\00a0";
+            font-size: 100px;
+        }
+
+        ul.breadcrumb4 li a {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        ul.breadcrumb4 li a:hover {
             color: gray;
         }
 
@@ -143,16 +189,23 @@
     </div>
 
     <ul class="breadcrumb2">
-        <li><a href="#">🏠</a></li>
-        <li><a href="#">Library</a></li>
-        <li class="data">Data</li>
+        <li style="font-weight: bold;"><a href="#">🏠</a></li>
+        <li style="font-weight: bold;"><a href="#">Library</a></li>
+        <li>Data</li>
     </ul>
     <div id="blank"></div>
 
     <ul class="breadcrumb3">
-        <li><a href="#">🏠</a></li>
-        <li class="library"><a href="#">Library</a></li>
-        <li class="data">Data</li>
+        <li style="font-weight: bold;"><a href="#">🏠</a></li>
+        <li style="font-weight: bold;"><a href="#">Library</a></li>
+        <li>Data</li>
+    </ul>
+    <div id="blank"></div>
+
+    <ul class="breadcrumb4" style=" display: flex; flex-direction: row; width: 80%; justify-content: space-between;">
+        <li style="font-weight: bold;"><a href="#">🏠</a></li>
+        <li style="font-weight: bold;"><a href="#">Library</a></li>
+        <li style="font-weight: bold;">Data</li>
     </ul>
     <div id="blank"></div>
 

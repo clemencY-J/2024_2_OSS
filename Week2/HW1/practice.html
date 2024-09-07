@@ -5,14 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #copyright{
-            background-color: aqua;
+        /*breadcrumb4*/
+        ul.breadcrumb4 {
+            padding: 10px 16px;
+            margin: 50px;
+            margin-left: 100px;
+            list-style: none;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        ul.breadcrumb4 li {
+            display: inline;
+            font-size: 18px;
+            
+        }
+
+        ul.breadcrumb4 li+li:before {
+            padding: 8px;
+            color: gray;
+            content: ">\00a0";
+            font-size: 100px;
+        }
+
+        ul.breadcrumb4 li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        ul.breadcrumb4 li a:hover {
+            color: gray;
+        }
+
+        #blank {
+            background-color: rgba(128, 128, 128, 0.317);
+            width: 100vw;
+            height: 50px;
+            margin-left: 0;
+        }
+
+        .data {
+            color: gray;
         }
     </style>
 </head>
 <body>
-    <div id="copyright">copyright </div> 로 div 엘리먼트 ID 를 지정
-
-   <a href="#copyright">copyright로 이동하기</a>
+    <ul class="breadcrumb4" style=" display: flex; flex-direction: row; width: 80%; justify-content: space-between;">
+        <li style="font-weight: bold;"><a href="#">🏠</a></li>
+        <li style="font-weight: bold;"><a href="#">Library</a></li>
+        <li style="font-weight: bold;">Data</li>
+    </ul>
+    
+    <div id="blank"></div>
 </body>
 </html>
