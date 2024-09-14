@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- .div_blue{
+        background-color:aqua;
+    }-->
+</head>
+
+<body>
+
+    <div>동적 페이지 생성입니다.</div>
+    <input type="text" id="input_append" />
+    <button onclick="listener_append()">등록</button>
+    <button onclick="delete_all()">전체삭제</button>
+    <div id="div_append">
+
+    </div>
+
+    <script> //동적 페이지 생성
+        function listener_append() {
+            let div_append = document.getElementById("div_append"); //어디에
+            let input_append = document.getElementById("input_append").value; //어떤 내용
+
+            if (input_append === "" || input_append == "undefined") {
+                return false;
+            }
+            div_append.innerHTML += "<div onclick='listener_remove(this)'>" + input_append + "</div>"; //안에 tag를 넣어서 속성에도 접근할 수 있다.
+        }
+
+        function listener_remove(obj) {
+            obj.remove();
+        }
+
+        function delete_all() {
+            let div_append = document.getElementById("div_append");
+            div_append.innerHTML = "";
+        }
+    </script>
+
+
+    <div id="div_append"></div>
+    <div id="div_add">추가될까요?</div>
+    <div id="div_add2">추가될까요?2/div>
+        <div id="div_01">바뀌기 전 텍스트</div>
+        <div id="div_02" class="div_0">div_02</div>
+        <div id="div_03" class="div_0">div_03</div>
+        <div id="div_04" class="div_0">div_04</div>
+
+        <input type="text" id="input1111" onfocus="console.log(1)" onblur="console.log(2)" />
+
+        <script>
+            let tempConfirm = confirm("정말 잘 확인이 되나요?");
+            if (tempConfirm) {
+                //여기는 진행하면 됨.
+                alert('등록하겠습니다!')
+            } else {
+                //여기는 빠른 종료 ㄱㄱ
+                alert('등록하지 않겠습니다!')
+            }
+            alert(tempConfirm);
+
+            let div_01 = document.getElementById("div_01");
+            alert("이제 바뀝니다!");
+            div_01.textContent = '바뀐 후 텍스트';
+
+            let num = 0;
+
+            /*div_01.addeventListener('click', function() {
+                div_01.textContent = num++ + '번째 바뀐 텍스트!';
+            })*/
+            div_01.addEventListener('click', changeText);
+            function changeText() {
+                div_01.textContent = num++ + '번째 바뀐 텍스트!(click!?)';
+            }
+
+            let div_0 = document.getElementsByClassName("div_0");
+
+            let div_add = document.getElementById("div_add");
+            let div_add2 = document.getElementById("div_add2");
+            div_01.appendChild();
+
+            alert(div_0.length);
+            div_0[0].textContent = "0";
+            for (let i = 0; i < div_0.length; i++) {
+                div_0[i].innerHTML = "<div>" + i + "번쨰 </div><div>클래스!!!!</div>";
+
+            }
+</body >
+</html >

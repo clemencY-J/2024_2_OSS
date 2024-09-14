@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2_22100675_form.html</title>
+
+</head>
+
+<body>
+
+    <h1>Dynamic Web page</h1>
+    <input type="text" id="input_append" />
+    <button onclick="listener_append()" style="background-color: blue; color:white; padding:0 12px;">추가</button>
+    <button onclick="delete_all()" style="background-color: green; color:white; padding:0 12px;">삭제</button>
+    <ul id="div_append">
+
+    </ul>
+
+    <script> //동적 페이지 생성
+        function listener_append() {
+            let div_append = document.getElementById("div_append"); //어디에
+            let input_append = document.getElementById("input_append").value; //어떤 내용
+            let divide_input = input_append.split(",");
+
+            if (input_append === "" || input_append == "undefined") {
+                return false;
+            }
+
+            divide_input.forEach(value => {
+                let item = document.createElement('li'); 
+                item.textContent = value; 
+                div_append.appendChild(item);
+            });
+
+            document.getElementById("input_append").value = "";
+
+        }
+
+        function listener_remove(obj) {
+            obj.remove();
+            document.getElementById("input_append").value = "";
+
+        }
+
+        function delete_all() {
+            let div_append = document.getElementById("div_append");
+            div_append.innerHTML = "";
+        }
+    </script>
+
+</html>
