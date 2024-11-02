@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--교수님 깃헙 복붙하기-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        // let array_fruits = ["apple", "orange", "melon"];
+        // let array_newfruits = new Array("apple1", "orange1", "melon1");
+        // alert(array_newfruits.length);
+        // alert(JSON.stringify(array_newfruits));
+
+        // array_fruits.sort();
+        // alert(array_fruits[1]);
+
+        // array_fruits.push("pear");
+        // alert(array_newfruits.length);
+
+        // let sum = 0;
+        // let array_numbers = [1, 10, 54, 207];
+        // array_numbers.forEach(array_function);
+        // // 1번째 파라미터는 array_numbers[0], .......
+        // // 2번쨰 파라미터는 0, 1, .........
+        // // 3번째 파라미터는 array_numbers
+        // function array_function(item, index, arr){ //item은 array에 있는 아이템을 하나씩, index는 번호로, array는 배열 전체 그대로 가져옴
+        //     sum += item;
+        // }
+        // alert("sum : " + sum);
+
+        // let sum3 = 0;
+        // for(let i=0;i<array_numbers; i++){
+        //     sum3 += array_numbers[i];
+        // }
+        // alert("sum3 : " + sum3);
+
+
+        // let dfruits = ["banana", "orange", "mango", "apple"];
+        // let fruit1 = dfruits[0]; // "banana"
+        // let fruit2 = dfruits[1]; // "orange"
+
+        // let [fruit01,,fruit02] = dfruits; // ,,이면 두 개를 건너뛴다 / 만약 ,,,,,,로 배열을 넘어가면 --> undefined
+        // // let fruit01 = dfruits[0]; 위에서 선언되었으므로 선언을 못한다
+
+        // let {[0]:fruit001, [1]:fruit002} = dfruits;
+
+        // let person = {
+        //     firstName : "길동",
+        //     lastName : "홍",
+        //     age : 700
+        // };
+
+        // //let {lastName, firstName} = person;
+        // let lastName01 = person["lastName"];
+        // //alert("lastname : " + lastName);
+
+        // let {firstName, lastName, country = "KOREA", height} = person; //height는 값이 없으므로 undefined 나옴
+        // alert("lastname : " + lastName);
+        // alert("firstname : " + firstName);
+        // alert("country : " + country);
+        // height = 170;
+        // alert("height : " + height);
+
+        
+        // // Property alias
+        // let {lastName : lName, firstName: fName} = person;
+        // alert(lName);
+        // alert(fName);
+
+
+
+        let jsonObject = {
+            "firstName" : "길동",
+            "lastName" : "홍",
+            "age" : 700
+        };
+        let jsonArray = ["1", "2", 3];
+        alert(jsonObject.firstName);
+
+        //객체를 문자열로 변환 가능하고
+        //document.getElementById("div_json_test").innerHTML = "";
+        $("#div_json_test").html(JSON.stringify(jsonObject));
+        let string_json = $("#div_json_test").html();
+        alert(string_json);
+        //문자열로 되어있는 것 객체로 변환 가능함
+        let afterParseJson = JSON.parse(string_json); //dksehlatlqkf
+        alert(afterParseJson.age);
+
+
+        // Create an Object
+        let car = {};
+        car.name = "Genesis";
+        car.year = "2024";
+
+        let myCar = {
+            name: 'Ford',
+            year: 2015,
+            print : function(){
+                return "Car info [" + this.name + "]" + this.year;
+            }
+        };
+        alert(car.print());
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

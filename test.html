@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="userInput" placeholder="Type something">
+    <button onclick="showInput()">Show Input</button>
+    <p id="display"></p>
+    <script>
+        function showInput() {
+            const input = document.getElementById("userInput").value;
+            document.getElementById("display").innerText = `You typed: ${input}`;
+        }
+    </script>
+
+</body>
+
+</html>

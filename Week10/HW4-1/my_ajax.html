@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>20241024</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <button onclick="getDataFromJSONFile()">get DATA</button>
+    NAME : <input type="text" id="student_name" />
+    AGE : <input type="number" id="student_age" />
+    PHONE : <input type="text" id="student_phone" />
+    ID : <input type="text" id="student_id" />
+    <button onclick="createDataToJSONFile()">create DATA</button>
+    <button onclick="updateDataToJSONFile()">update DATA</button>
+    <button onclick="deleteDataFromJSONFile()">delete DATA</button>
+    <div id="div_students">
+    </div>
+
+    <script>
+
+        function getDataFromJSONFile() {
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:3000/students");
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send();
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    $("#div_students").html("");
+                    let students = JSON.parse(xhr.response);
+                    students.forEach((item) => {
+                        $("#div_students").append("<div>" + item.id + " " + item.age + " " + item.name + " " + item.phone + "</div>");
+                    });
+                }
+            }
+        }
+
+        function createDataToJSONFile() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/students");
+            xhr.setRequestHeader("content-type", "application/json;chatset=UTF-8");
+
+            let data = { id: $("#student_id").val(), name: $("#student_name").val(), age: $("#student_age").val(), phone: $("#student_phone").val() };
+
+            xhr.send(JSON.stringify(data));
+            xhr.onload = () => {
+                if (xhr.status === 201) {
+                    alert("등록 성공!");
+                    getDataFromJSONFile();
+                }
+            }
+        }
+
+
+        function updateDataToJSONFile() {
+            let id = $("#student_id").val();
+            alert(id);
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:3000/students/" + id);
+            xhr.setRequestHeader("content-type", "application/json;chatset=UTF-8");
+
+            let data = { id: $("#student_id").val(), name: $("#student_name").val(), age: $("#student_age").val(), phone: $("#student_phone").val() };
+
+            xhr.send(JSON.stringify(data));
+            xhr.onload = () => {
+                alert(xhr.status);
+                if (xhr.status === 200) {
+                    alert("수정 성공!");
+                    getDataFromJSONFile();
+                }
+            }
+        }
+
+        function deleteDataFromJSONFile() {
+            let id = $("#student_id").val();  // 삭제할 학생의 ID 입력 받음
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "http://localhost:3000/students/" + id);
+            xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    alert("삭제 성공!");
+                    getDataFromJSONFile(); // 삭제 후 목록을 다시 불러옴
+                } else if (xhr.status === 404) {
+                    alert("학생을 찾을 수 없습니다.");
+                } else {
+                    alert("삭제 실패! 상태 코드: " + xhr.status);
+                }
+            };
+
+            xhr.send();
+        }
+
+    </script>
+
+
+</body>
+
+</html>
