@@ -1,21 +1,31 @@
 import React from "react";
 
-function StudentList({ students, onEdit, onDelete }) {
+const StudentList = ({ students, onEdit, onDelete }) => {
   return (
     <div className="mt-4">
       {students.map((student) => (
-        <div key={student.id} className="d-flex justify-content-between align-items-center border p-2 m-2">
+        <div key={student.id} className="d-flex justify-content-between align-items-center mb-2">
           <div>
-            {student.id} {student.name}{student.age} {student.phone}
+            <span>{student.id}</span> - <span>{student.name}</span> - <span>{student.age}</span> - <span>{student.phone}</span>
           </div>
           <div>
-            <button className="btn btn-primary" onClick={() => onEdit(student)}> Edit </button>
-            <button className="btn btn-danger" onClick={() => onDelete(student.id)}> Delete </button>
+            <button
+              className="btn btn-primary btn-sm me-2"
+              onClick={() => onEdit(student)}
+            >
+              Edit
+            </button>
+            <button
+              className="btn btn-danger btn-sm"
+              onClick={() => onDelete(student.id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default StudentList;
