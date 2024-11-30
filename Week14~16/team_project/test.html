@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Animation UI</title>
+    <style>
+        /* 기본적인 설정 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 80%;
+            height: 60vh;
+        }
+
+        .disk {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease, left 0.5s ease, opacity 0.5s ease;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .disk-info {
+            position: absolute;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .disk-info h2,
+        .disk-info p {
+            margin: 0;
+        }
+
+        .disk-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .disk-info p {
+            font-size: 18px;
+        }
+
+        .disk-info.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 각 디스크 -->
+        <div id="disk1" class="disk" style="background-image: url('https://via.placeholder.com/200/0000FF');" onmouseover="moveToCenter(1)"></div>
+        <div id="disk2" class="disk" style="background-image: url('https://via.placeholder.com/200/FF0000');" onmouseover="moveToCenter(2)"></div>
+        <div id="disk3" class="disk" style="background-image: url('https://via.placeholder.com/200/00FF00');" onmouseover="moveToCenter(3)"></div>
+    </div>
+
+    <!-- 디스크 정보 -->
+    <div id="diskInfo" class="disk-info">
+        <h2 id="title">Title</h2>
+        <p id="artist">Artist</p>
+    </div>
+
+    <script>
+        // 디스크 데이터
+        const diskData = {
+            1: {
+                title: 'Take a Chance',
+                artist: 'Little Dragon, Kölsch',
+                img: 'https://via.placeholder.com/200/0000FF'
+            },
+            2: {
+                title: 'Skin: The Remixes',
+                artist: 'Flume',
+                img: 'https://via.placeholder.com/200/FF0000'
+            },
+            3: {
+                title: 'Another Day',
+                artist: 'Artist Name',
+                img: 'https://via.placeholder.com/200/00FF00'
+            }
+        };
+
+        function moveToCenter(diskId) {
+            // 디스크 요소 선택
+            const disks = [document.getElementById('disk1'), document.getElementById('disk2'), document.getElementById('disk3')];
+            const diskInfo = document.getElementById('diskInfo');
+
+            // 디스크들 위치 설정 및 활성화
+            disks.forEach((disk, index) => {
+                if (index + 1 === diskId) {
+                    // 선택된 디스크
+                    disk.style.transform = 'translateX(0) scale(1.2)';
+                    disk.style.zIndex = 3;
+                    diskInfo.classList.add('show');
+                    // 정보 업데이트
+                    diskInfo.querySelector('#title').textContent = diskData[diskId].title;
+                    diskInfo.querySelector('#artist').textContent = diskData[diskId].artist;
+
+                    diskInfo.style.left = `calc(50% - 150px)`; // 정보 패널을 중앙에 배치
+                    diskInfo.style.top = '70%';
+                } else if (index < diskId - 1) {
+                    // 선택된 디스크 왼쪽에 있는 디스크
+                    disk.style.transform = 'translateX(-250px) scale(1)';
+                    disk.style.zIndex = 1;
+                } else {
+                    // 선택된 디스크 오른쪽에 있는 디스크
+                    disk.style.transform = 'translateX(250px) scale(1)';
+                    disk.style.zIndex = 1;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
